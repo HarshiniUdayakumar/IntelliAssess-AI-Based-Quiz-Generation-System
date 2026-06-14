@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Sidebar() {
+export default function StudentSidebar() {
   return (
     <div style={styles.sidebar}>
       <div>
@@ -10,22 +10,34 @@ export default function Sidebar() {
           </h1>
 
           <p style={styles.tagline}>
-            Teacher Portal
+            Student Portal
           </p>
         </div>
 
         <div style={styles.menu}>
-          <Link style={styles.link} to="/">
-            <span>🏠</span>
-            Dashboard
+          <Link style={styles.link} to="/student">
+            🏠 Dashboard
           </Link>
 
           <Link
             style={styles.link}
-            to="/courses"
+            to="/student/courses"
           >
-            <span>📚</span>
-            Courses
+            📚 Courses
+          </Link>
+
+          <Link
+            style={styles.link}
+            to="/student"
+          >
+            📝 My Quizzes
+          </Link>
+
+          <Link
+            style={styles.link}
+            to="/student"
+          >
+            📊 Results
           </Link>
         </div>
       </div>
@@ -33,16 +45,13 @@ export default function Sidebar() {
       <div style={styles.footer}>
         <div style={styles.profile}>
           <div style={styles.avatar}>
-            T
+            S
           </div>
 
           <div>
-            <h4 style={styles.profileName}>
-              Welcome Back
-            </h4>
-
+            <h4>Welcome Back</h4>
             <p style={styles.role}>
-              Teacher Account
+              Student Account
             </p>
           </div>
         </div>
@@ -57,7 +66,7 @@ const styles = {
     height: "100vh",
 
     background:
-      "linear-gradient(180deg,#020617,#0f172a,#1e3a8a)",
+      "linear-gradient(180deg,#0f172a,#1e40af)",
 
     color: "white",
 
@@ -66,61 +75,43 @@ const styles = {
     justifyContent: "space-between",
 
     padding: "24px",
-
-    boxShadow:
-      "0 0 40px rgba(0,0,0,0.15)",
   },
 
   brandSection: {
-    marginBottom: "45px",
+    marginBottom: "40px",
   },
 
   logo: {
     fontSize: "28px",
     fontWeight: "700",
-    marginBottom: "8px",
-    letterSpacing: "-0.5px",
   },
 
   tagline: {
-    color: "#94a3b8",
-    fontSize: "14px",
+    color: "#bfdbfe",
+    marginTop: "5px",
   },
 
   menu: {
     display: "flex",
     flexDirection: "column",
-    gap: "14px",
+    gap: "12px",
   },
 
   link: {
-    display: "flex",
-    alignItems: "center",
-    gap: "12px",
-
-    color: "white",
     textDecoration: "none",
+    color: "white",
 
-    padding: "14px 16px",
+    padding: "14px",
 
-    borderRadius: "14px",
+    borderRadius: "12px",
 
     background:
-      "rgba(255,255,255,0.06)",
-
-    border:
-      "1px solid rgba(255,255,255,0.08)",
-
-    fontSize: "15px",
-    fontWeight: "500",
-
-    transition: "all 0.3s ease",
+      "rgba(255,255,255,0.08)",
   },
 
   footer: {
     borderTop:
-      "1px solid rgba(255,255,255,0.12)",
-
+      "1px solid rgba(255,255,255,0.15)",
     paddingTop: "20px",
   },
 
@@ -131,33 +122,23 @@ const styles = {
   },
 
   avatar: {
-    width: "50px",
-    height: "50px",
+    width: "48px",
+    height: "48px",
 
     borderRadius: "50%",
 
     background:
-      "linear-gradient(135deg,#3b82f6,#60a5fa)",
-
-    color: "white",
+      "linear-gradient(135deg,#60a5fa,#3b82f6)",
 
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
 
-    fontWeight: "700",
-    fontSize: "18px",
-  },
-
-  profileName: {
-    margin: 0,
-    fontSize: "15px",
-    fontWeight: "600",
+    fontWeight: "bold",
   },
 
   role: {
-    marginTop: "4px",
     fontSize: "13px",
-    color: "#94a3b8",
+    color: "#bfdbfe",
   },
 };
